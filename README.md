@@ -51,12 +51,6 @@ Mealie is a self hosted recipe manager, meal planner and shopping list with a Re
 - Docker: Easy **Docker** deployment
 - Localisation: **Translations** for 35+ languages
 
-### Translations
-
-Translations can be a great way for **non-coders** to contribute to the project. We use [Crowdin](https://crowdin.com/project/mealie) to allow several contributors to work on translating Mealie. You can simply help by voting for your preferred translations, or even by completely translating Mealie into a new language.
-
-For more information, check out the translation page on the [contributor's guide](https://nightly.mealie.io/contributors/translating/).
-
 <!-- LICENSE -->
 ## License
 Distributed under the AGPL License. See `LICENSE` for more information.
