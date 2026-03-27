@@ -12,7 +12,7 @@ If you see a specific idea that resonates with you, please check if there's alre
 
 The questions (bar question 1) that are free text are on separate pages you'll need to click into, as there's just too much content to include on this page.
 
-For the written response sections, we have removed some of the more indifferent responses (e.g., "N/A") to save you reading time. If you'd like to see all the raw responses, they're in [this GitHub commit](https://github.com/mealie-recipes/mealie/pull/4666/commits/1287bc1635d9c2560b10db3a92a0d6644bc81571).
+For the written response sections, we have removed some of the more indifferent responses (e.g., "N/A") to save you reading time. If you'd like to see all the raw responses, they're in [this GitHub commit](https://github.com/abdo14m1/mealie/pull/4666/commits/1287bc1635d9c2560b10db3a92a0d6644bc81571).
 
 ## Structured Questions
 
@@ -28,7 +28,7 @@ This question was a single select and it was optional.
 
 Key insight: SQLite is the predominant database, but Postgres maintains an admirable share and must remain front of mind for any changes we make.
 
-[GitHub Discussion](https://github.com/mealie-recipes/mealie/discussions/4640)
+[GitHub Discussion](https://github.com/abdo14m1/mealie/discussions/4640)
 
 ![Question 2](Question2.png)
 
@@ -39,7 +39,7 @@ How long have you been using Mealie? This question was a single select and it wa
 Key insight: Most users have been using Mealie less than a year, with another 25% in the 1-2 year range. These users will have seen a lot of change in the product over that time.
 Thanks to the long term users!
 
-[GitHub Discussion](https://github.com/mealie-recipes/mealie/discussions/4641)
+[GitHub Discussion](https://github.com/abdo14m1/mealie/discussions/4641)
 
 ![Question 3](Question3.png)
 
@@ -47,7 +47,7 @@ Thanks to the long term users!
 
 This question was multiple choice and it was optional.
 
-[GitHub Discussion](https://github.com/mealie-recipes/mealie/discussions/4642)
+[GitHub Discussion](https://github.com/abdo14m1/mealie/discussions/4642)
 
 ![Question 4](Question4.png)
 
@@ -57,7 +57,7 @@ This question was a single select and it was mandatory.
 
 Key insight: ~85% of instances have 2 users or fewer. This is assumed to be a couple of adults living together.
 
-[GitHub Discussion](https://github.com/mealie-recipes/mealie/discussions/4643)
+[GitHub Discussion](https://github.com/abdo14m1/mealie/discussions/4643)
 
 ![Question 5](Question5.png)
 
@@ -67,7 +67,7 @@ This question was a single select and it was mandatory.
 
 Key insight: Similar to the above question, one group being the most common backs the theory of one "family" using the Mealie instance.
 
-[GitHub Discussion](https://github.com/mealie-recipes/mealie/discussions/4644)
+[GitHub Discussion](https://github.com/abdo14m1/mealie/discussions/4644)
 
 ![Question 6](Question6.png)
 
@@ -75,7 +75,7 @@ Key insight: Similar to the above question, one group being the most common back
 
 Do you access Mealie on a mobile? Using your browser or with it installed as an app (a Progressive Web App/PWA)? This question was a multiple select and it was mandatory.
 
-[GitHub Discussion](https://github.com/mealie-recipes/mealie/discussions/4645)
+[GitHub Discussion](https://github.com/abdo14m1/mealie/discussions/4645)
 
 ![Question 7](Question7.png)
 
@@ -83,7 +83,7 @@ Do you access Mealie on a mobile? Using your browser or with it installed as an 
 
 Please select all the features you actively/regularly use, or consider important. This question was a multiple select and it was optional.
 
-[GitHub Discussion](https://github.com/mealie-recipes/mealie/discussions/4646)
+[GitHub Discussion](https://github.com/abdo14m1/mealie/discussions/4646)
 
 ![Question 8](Question8.png)
 
@@ -93,13 +93,13 @@ Some of you will spot feature suggestions that you know to already exist in Meal
 
 ### Shopping List Suggestions
 
-[GitHub Discussion](https://github.com/mealie-recipes/mealie/discussions/4647)
+[GitHub Discussion](https://github.com/abdo14m1/mealie/discussions/4647)
 
 [Question 9](q9.md)
 
 ### Meal Planner Suggestions
 
-[GitHub Discussion](https://github.com/mealie-recipes/mealie/discussions/4648)
+[GitHub Discussion](https://github.com/abdo14m1/mealie/discussions/4648)
 
 [Question 10](q10.md)
 
@@ -107,13 +107,13 @@ Some of you will spot feature suggestions that you know to already exist in Meal
 
 Key insight: Looks like a lot of people would be fine with this not existing, or at least being hidden.
 
-[GitHub Discussion](https://github.com/mealie-recipes/mealie/discussions/4649)
+[GitHub Discussion](https://github.com/abdo14m1/mealie/discussions/4649)
 
 [Question 11](q11.md)
 
 ### Recipe Suggestions
 
-[GitHub Discussion](https://github.com/mealie-recipes/mealie/discussions/4650)
+[GitHub Discussion](https://github.com/abdo14m1/mealie/discussions/4650)
 
 [Question 12](q12.md)
 
@@ -121,6 +121,6 @@ Key insight: Looks like a lot of people would be fine with this not existing, or
 
 There are so many kind words in this section in particular. Thanks so much, it means a lot to the whole team and all our contributors to see the impact Mealie has on people's lives!
 
-[GitHub Discussion](https://github.com/mealie-recipes/mealie/discussions/4651)
+[GitHub Discussion](https://github.com/abdo14m1/mealie/discussions/4651)
 
 [Question 13](q13.md)

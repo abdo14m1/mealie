@@ -17,7 +17,7 @@ To deploy mealie on your local network, it is highly recommended to use Docker t
 
 [Get Docker Compose](https://docs.docker.com/compose/install/)
 
-[Mealie on GitHub registry](https://github.com/mealie-recipes/mealie/pkgs/container/mealie)
+[Mealie on GitHub registry](https://github.com/abdo14m1/mealie/pkgs/container/mealie)
 
 - linux/amd64
 - linux/arm64
@@ -31,7 +31,7 @@ To deploy mealie on your local network, it is highly recommended to use Docker t
 We've gone through a few versions of Mealie v1 deployment targets. We have settled on a single container deployment, and we've begun publishing the nightly container on github containers. If you're looking to move from the old nightly (split containers _or_ the omni image) to the new nightly, there are a few things you need to do:
 
 1. Take a backup just in case!
-2. Replace the image for the API container with `ghcr.io/mealie-recipes/mealie:v3.13.1`
+2. Replace the image for the API container with `ghcr.io/abdo14m1/mealie:v3.13.1`
 3. Take the external port from the frontend container and set that as the port mapped to port `9000` on the new container. The frontend is now served on port 9000 from the new container, so it will need to be mapped for you to have access.
 4. Restart the container
 
@@ -101,17 +101,17 @@ These backups are just plain .zip files that you can download from the UI or acc
 
 ### Docker Tags
 
-See all available tags on [GitHub](https://github.com/mealie-recipes/mealie/pkgs/container/mealie).
+See all available tags on [GitHub](https://github.com/abdo14m1/mealie/pkgs/container/mealie).
 
-`ghcr.io/mealie-recipes/mealie:nightly`
+`ghcr.io/abdo14m1/mealie:nightly`
 
 The nightly build are the latest and greatest builds that are built directly off of every commit to the `mealie-next` branch and as such may contain bugs. These are great to help the community catch bugs before they hit the stable release or if you like living on the edge.
 
-`ghcr.io/mealie-recipes/mealie:<version>`
+`ghcr.io/abdo14m1/mealie:<version>`
 
 We also provide versioned containers that allow to pin to a specific release. Each time a new release is built a new tag will be pushed with the version. These are great to pin to a specific version and allows you to have absolute control on when you upgrade your container.
 
-`ghcr.io/mealie-recipes/mealie:latest`
+`ghcr.io/abdo14m1/mealie:latest`
 
 The latest tag provides the latest released image of Mealie.
 

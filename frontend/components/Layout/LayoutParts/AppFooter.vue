@@ -17,7 +17,7 @@
         <v-btn
           color="white"
           icon
-          href="https://github.com/mealie-recipes/mealie"
+          href="https://github.com/abdo14m1/mealie"
           target="_blank"
         >
           <v-icon>

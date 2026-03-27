@@ -13,25 +13,16 @@ jobs:
     outputs:
       commit-sha: ${{ steps.commit.outputs.commit-sha }}
     steps:
-      - name: Generate GitHub App Token
-        id: app-token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ secrets.COMMIT_BOT_APP_ID }}
-          private-key: ${{ secrets.COMMIT_BOT_APP_PRIVATE_KEY }}
-
-      - name: Checkout 🛎
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          token: ${{ steps.app-token.outputs.token }}
 
       - name: Extract Version From Tag Name
         run: echo "VERSION_NUM=$(echo ${{ github.event.release.tag_name }} | sed 's/^v//')" >> $GITHUB_ENV
 
       - name: Configure Git
         run: |
-          git config user.name "mealie-commit-bot[bot]"
-          git config user.email "mealie-commit-bot[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Update all version strings
         run: |
@@ -84,11 +75,6 @@ jobs:
     permissions:
       contents: read
       packages: write
-      # The id-token write permission is needed to connect to Depot.dev
-      # as part of the partial-builder.yml action. It needs to be declared
-      # in the parent action, as noted here:
-      # https://github.com/orgs/community/discussions/76409#discussioncomment-8131390
-      id-token: write
     name: Build Tagged Release
     uses: ./.github/workflows/publish.yml
     needs:
@@ -100,11 +86,7 @@ jobs:
       ref: ${{ needs.commit-version-bump.outputs.commit-sha }}
       tag: ${{ github.event.release.tag_name }}
       tags: |
-          hkotel/mealie:latest
           ghcr.io/${{ github.repository }}:latest
-    secrets:
-      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
   rollback-on-failure:
     name: Rollback version commit if deployment fails
@@ -116,23 +98,15 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Generate GitHub App Token
-        id: app-token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ secrets.COMMIT_BOT_APP_ID }}
-          private-key: ${{ secrets.COMMIT_BOT_APP_PRIVATE_KEY }}
-
-      - name: Checkout 🛎
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          token: ${{ steps.app-token.outputs.token }}
           fetch-depth: 0
 
       - name: Configure Git
         run: |
-          git config user.name "mealie-commit-bot[bot]"
-          git config user.email "mealie-commit-bot[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Delete release tag
         run: |
@@ -142,17 +116,3 @@ jobs:
         run: |
           git revert --no-edit ${{ needs.commit-version-bump.outputs.commit-sha }}
           git push origin HEAD:${{ github.event.repository.default_branch }}
-
-  notify-discord:
-    name: Notify Discord
-    needs:
-      - publish
-    if: success()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Discord notification
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_RELEASE_WEBHOOK }}
-        uses: Ilshidur/action-discord@0.3.2
-        with:
-          args: "🚀  Version {{ EVENT_PAYLOAD.release.tag_name }} of Mealie has been released. See the release notes https://github.com/mealie-recipes/mealie/releases/tag/{{ EVENT_PAYLOAD.release.tag_name }}"

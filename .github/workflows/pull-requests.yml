@@ -14,11 +14,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  pull-request-lint:
-    name: "Lint PR"
-    if: github.event_name == 'pull_request'
-    uses: ./.github/workflows/pull-request-lint.yml
-
   backend-tests:
     name: "Backend Server Tests"
     uses: ./.github/workflows/test-backend.yml
@@ -56,19 +51,11 @@ jobs:
     if: |
       github.event_name == 'pull_request' &&
       contains(github.event.pull_request.labels.*.name, 'build-image') &&
-      github.repository == 'mealie-recipes/mealie'
+      github.repository == 'abdo14m1/mealie'
     permissions:
       contents: read
       packages: write
-      # The id-token write permission is needed to connect to Depot.dev
-      # as part of the partial-builder.yml action. It needs to be declared
-      # in the parent action, as noted here:
-      # https://github.com/orgs/community/discussions/76409#discussioncomment-8131390
-      id-token: write
     needs: build-package
     uses: ./.github/workflows/publish.yml
     with:
       tag: pr-${{ github.event.pull_request.number }}
-    secrets:
-      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}

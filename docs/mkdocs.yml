@@ -53,8 +53,8 @@ extra_css:
   - assets/stylesheets/custom.css
 extra_javascript:
   - assets/js/extra.js
-repo_url: https://github.com/mealie-recipes/mealie/
-repo_name: mealie-recipes/mealie
+repo_url: https://github.com/abdo14m1/mealie/
+repo_name: abdo14m1/mealie
 edit_uri: edit/mealie-next/docs/docs/
 
 nav:
@@ -94,19 +94,6 @@ nav:
           - Reverse Proxy (SWAG): "documentation/community-guide/swag.md"
 
   - API Reference: "https://demo.mealie.io/docs"
-
-  - Contributors Guide:
-      - Non-Code: "contributors/non-coders.md"
-      - Translating: "contributors/translating.md"
-      - Developers Guide:
-          - Building Packages: "contributors/developers-guide/building-packages.md"
-          - Code Contributions: "contributors/developers-guide/code-contributions.md"
-          - Dev Getting Started: "contributors/developers-guide/starting-dev-server.md"
-          - Database Changes: "contributors/developers-guide/database-changes.md"
-          - Maintainers Guide: "contributors/developers-guide/maintainers.md"
-          - Migration Guide: "contributors/developers-guide/migration-guide.md"
-      - Guides:
-          - Improving Ingredient Parser: "contributors/guides/ingredient-parser.md"
 
   - News:
       - Surveys:

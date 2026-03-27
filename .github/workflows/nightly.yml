@@ -34,9 +34,8 @@ jobs:
     permissions:
       contents: read
       packages: write
-      id-token: write
     name: Build Tagged Release
-    if: github.repository == 'mealie-recipes/mealie'
+    if: github.repository == 'abdo14m1/mealie'
     uses: ./.github/workflows/publish.yml
     needs:
       - frontend-tests
@@ -44,6 +43,3 @@ jobs:
       - build-package
     with:
       tag: nightly
-    secrets:
-      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}

@@ -143,7 +143,7 @@ task docker:prod        # Build and run production Docker compose
 
 5. **Composables for shared logic:** Prefer composables in `composables/` over inline code duplication
 
-6. **Translations:** Only modify `en-US` locale files when adding new translation strings - other locales are managed via Crowdin and **must never be modified** (PRs modifying non-English locales will be rejected)
+6. **Translations:** Only modify `en-US` locale files when adding new translation strings - other locales should not be modified directly
 
 ### Cross-Cutting Concerns
 
@@ -159,60 +159,7 @@ task docker:prod        # Build and run production Docker compose
 
 3. **Pre-commit hooks:** Install via `task setup:py`, enforces Ruff formatting/linting
 
-4. **Testing before PRs:** Run `task py:check` and `task ui:check` before submitting PRs
-
-## Pull Request Best Practices
-
-### Before Submitting a PR
-
-1. **Draft PRs are optional:** Create a draft PR early if you want feedback while working, or open directly as ready when complete
-2. **Verify code generation:** If you modified Pydantic schemas, ensure `task dev:generate` was run
-3. **Follow Conventional Commits:** Title your PR according to the conventional commits format (see PR template)
-4. **Add release notes:** Include user-facing changes in the PR description
-
-### What to Review
-
-**Architecture & Patterns:**
-- Does the code follow the repository-service-controller pattern?
-- Are controllers delegating business logic to services?
-- Are services coordinating repositories, not accessing the database directly?
-- Is dependency injection used properly (`Depends(get_repositories)`, `Depends(get_current_user)`)?
-
-**Data Scoping:**
-- Are repositories correctly scoped to group/household context?
-- Do route handlers properly validate group/household ownership before operations?
-- Are multi-tenant boundaries enforced (users can't access other groups' data)?
-
-**Type Safety:**
-- Are type hints present on all functions and methods?
-- Are Pydantic schemas using correct suffixes (`*In`, `*Out`, `*Create`, `*Update`)?
-- For frontend, does TypeScript code pass strict type checking?
-
-**Generated Files:**
-- Verify `frontend/lib/api/types/` files weren't manually edited (they're auto-generated)
-- Check that `mealie/schema/*/__init__.py` exports match actual schema files (auto-generated)
-- If schemas changed, confirm generated files were updated via `task dev:generate`
-
-**Code Quality:**
-- Is the code readable and well-organized?
-- Are complex operations documented with clear comments?
-- Do component names follow the strict naming conventions (Domain/Global/Layout/Page prefixes)?
-- Are composables used for shared frontend logic instead of duplication?
-
-**Translations:**
-- Were only `en-US` locale files modified for new translation strings?
-- Verify no other locale files (managed by Crowdin) were touched
-
-**Database Changes:**
-- Are Alembic migrations included for schema changes?
-- Are migrations tested against both SQLite and PostgreSQL?
-
-### Review Etiquette
-
-- Be constructive and specific in feedback
-- Suggest code examples when proposing changes
-- Focus on architecture and logic - formatting/linting is handled by CI
-- Use "Approve" when ready to merge, "Request Changes" for blocking issues, "Comment" for non-blocking suggestions
+4. **Testing before merging:** Run `task py:check` and `task ui:check` before merging changes
 
 ## Common Gotchas
 
@@ -220,7 +167,7 @@ task docker:prod        # Build and run production Docker compose
 - **Repository context:** Repos are group/household-scoped - passing wrong IDs causes 404s
 - **Session handling:** Don't create sessions manually, use dependency injection or `session_context()`
 - **Schema changes require codegen:** After changing Pydantic models, run `task dev:generate`
-- **Translation files:** Only modify `en-US` locale files - all other locales are managed by Crowdin
+- **Translation files:** Only modify `en-US` locale files - other locales should not be modified directly
 - **Dev containers:** This project uses VS Code dev containers - leverage the pre-configured environment
 - **Task commands:** Use `task` commands instead of direct tool invocation for consistency
 
@@ -236,5 +183,3 @@ task docker:prod        # Build and run production Docker compose
 ## Additional Resources
 
 - [Documentation](https://docs.mealie.io/)
-- [Contributors Guide](https://nightly.mealie.io/contributors/developers-guide/code-contributions/)
-- [Discord](https://discord.gg/QuStdQGSGK)

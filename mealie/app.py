@@ -38,7 +38,7 @@ as a reference for how to get started.
 
 If you have any questions or comments about mealie, please use the discord server to talk to the developers or other
 community members. If you'd like to file an issue, please use the
-[GitHub Issue Tracker | Mealie](https://github.com/mealie-recipes/mealie/issues/new/choose)
+[GitHub Issue Tracker | Mealie](https://github.com/abdo14m1/mealie/issues/new/choose)
 
 
 ## Helpful Links

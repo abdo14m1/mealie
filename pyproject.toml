@@ -2,7 +2,7 @@
 name = "mealie"
 version = "3.13.1"
 description = "A Recipe Manager"
-authors = [{ name = "Hayden", email = "hay-kot@pm.me" }]
+authors = [{ name = "abdo14m1" }]
 license = "AGPL-3.0-only"
 requires-python = ">=3.12,<3.13"
 dependencies = [

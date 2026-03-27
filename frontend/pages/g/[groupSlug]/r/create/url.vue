@@ -121,7 +121,7 @@
             {{ $t("new-recipe.google-ld-json-info") }}
           </a>
           <a
-            href="https://github.com/mealie-recipes/mealie/issues"
+            href="https://github.com/abdo14m1/mealie/issues"
             target="_blank"
             rel="noreferrer nofollow"
           >
