@@ -94,7 +94,3 @@ nav:
           - Reverse Proxy (SWAG): "documentation/community-guide/swag.md"
 
   - API Reference: "https://demo.mealie.io/docs"
-
-  - News:
-      - Surveys:
-          - October 2024: "news/surveys/2024-october/overview.md"
